@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Iyad Hany — student building skills in Python, programming, and cybersecurity fundamentals.">
+  <title>Iyad Hany | Developer Portfolio</title>
+  <style>
+    :root {
+      --bg: #090d18; --panel: rgba(18, 26, 46, .78); --panel2: #111a2e;
+      --text: #f4f7ff; --muted: #a6b2cb; --accent: #67e8d5;
+      --accent2: #8b9cff; --line: rgba(160,180,220,.17);
+      --shadow: 0 22px 70px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 15% 0%, rgba(72,100,190,.22), transparent 38%),
+        radial-gradient(ellipse at 95% 22%, rgba(38,190,170,.12), transparent 32%), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:750; letter-spacing:.2px; }
+    .mark { display:grid; place-items:center; width:38px; height:38px; border-radius:12px; color:#07131a; background:linear-gradient(135deg,var(--accent),var(--accent2)); font-weight:900; }
+    .navlinks { display:flex; gap:22px; color:var(--muted); font-size:.93rem; }
+    .navlinks a:hover, .textlink:hover { color:var(--accent); }
+    .hero { padding: 86px 0 66px; display:grid; grid-template-columns: 1.4fr .8fr; gap:46px; align-items:center; }
+    .eyebrow { color:var(--accent); font-size:.82rem; font-weight:750; text-transform:uppercase; letter-spacing:2px; }
+    h1 { margin:14px 0 15px; font-size:clamp(2.7rem,7vw,5.3rem); line-height:1.03; letter-spacing:-.055em; }
+    .gradient { background:linear-gradient(100deg,#fff 10%,var(--accent) 60%,var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .lead { color:var(--muted); font-size:1.12rem; max-width:650px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:27px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 17px; border-radius:12px; font-weight:750; border:1px solid var(--line); transition:transform .18s ease, border-color .18s ease; }
+    .btn:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .primary { color:#06141a; background:var(--accent); border-color:transparent; }
+    .terminal { background:rgba(10,15,29,.82); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); overflow:hidden; transform:rotate(1deg); }
+    .termbar { display:flex; align-items:center; gap:7px; padding:14px 16px; border-bottom:1px solid var(--line); color:var(--muted); font-size:.8rem; }
+    .dot { width:8px; height:8px; border-radius:50%; background:#64748b; }
+    pre { margin:0; padding:24px; color:#cbd7ee; font: .91rem/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space:pre-wrap; }
+    .codegreen { color:var(--accent); } .codepurple { color:#b7a7ff; } .codegray { color:#71809e; }
+    section { padding:34px 0 52px; }
+    .sectionhead { margin-bottom:23px; }
+    h2 { margin:0 0 7px; font-size:clamp(1.7rem,4vw,2.3rem); letter-spacing:-.03em; }
+    .sub { color:var(--muted); margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+    .card { padding:22px; background:var(--panel); border:1px solid var(--line); border-radius:18px; box-shadow:0 10px 35px rgba(0,0,0,.08); }
+    .card h3 { margin:9px 0 7px; font-size:1.08rem; }
+    .card p { color:var(--muted); margin:0; font-size:.95rem; }
+    .icon { display:grid; place-items:center; width:43px; height:43px; border-radius:13px; background:rgba(103,232,213,.1); color:var(--accent); font-size:1.2rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:15px; }
+    .tag { color:#c8d5ec; border:1px solid var(--line); background:rgba(255,255,255,.025); border-radius:999px; padding:4px 9px; font-size:.76rem; }
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .skillrow { margin-top:15px; }
+    .skilltop { display:flex; justify-content:space-between; gap:12px; color:#dce5f7; font-size:.92rem; }
+    .skilltop span:last-child { color:var(--muted); font-size:.8rem; }
+    .bar { height:6px; border-radius:99px; background:#202b43; margin-top:8px; overflow:hidden; }
+    .bar i { display:block; height:100%; width:var(--w); background:linear-gradient(90deg,var(--accent),var(--accent2)); border-radius:99px; }
+    .notice { border-left:3px solid var(--accent); padding:12px 15px; background:rgba(103,232,213,.06); color:var(--muted); border-radius:0 10px 10px 0; font-size:.9rem; margin-top:16px; }
+    .contact { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer { border-top:1px solid var(--line); color:var(--muted); padding:22px 0 30px; font-size:.86rem; }
+    .textlink { color:var(--accent); overflow-wrap:anywhere; }
+    @media (max-width:760px) {
+      .hero { grid-template-columns:1fr; padding:60px 0 40px; gap:30px; }
+      .terminal { transform:none; }
+      .grid { grid-template-columns:1fr; }
+      .about { grid-template-columns:1fr; }
+      .navlinks { gap:12px; font-size:.82rem; }
+      .wrap { width:min(100% - 28px,1080px); }
+    }
+    @media (max-width:420px) { .navlinks a:nth-child(2) { display:none; } h1 { font-size:2.65rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home"><span class="mark">IH</span><span>Iyad Hany</span></a>
+        <div class="navlinks">
+          <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Student • Python • Cybersecurity</div>
+        <h1>Learning today.<br><span class="gradient">Building tomorrow.</span></h1>
+        <p class="lead">I’m Iyad Hany, a student developing my skills in Python programming and cybersecurity fundamentals. I enjoy independent learning, technical research, and solving problems step by step.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my learning projects ↓</a>
+          <a class="btn" href="https://github.com/hanyslamt63-lang" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Decorative Python code example">
+        <div class="termbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px">learning.py</span></div>
+        <pre><span class="codepurple">def</span> <span class="codegreen">keep_learning</span>(topic):
+    <span class="codegray"># Small steps, steady progress</span>
+    practice = <span class="codegreen">True</span>
+    research = <span class="codegreen">True</span>
+    <span class="codepurple">return</span> topic, practice, research
+
+print(keep_learning(
+    <span class="codegreen">"Python + Cybersecurity"</span>
+))</pre>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="sectionhead">
+        <div class="eyebrow">A little about me</div>
+        <h2>Curious by nature. Focused on progress.</h2>
+        <p class="sub">A clear starting point, with room to grow through real projects.</p>
+      </div>
+      <div class="about">
+        <article class="card">
+          <div class="icon">⌘</div>
+          <h3>My direction</h3>
+          <p>I’m exploring programming and cybersecurity, strengthening my Python fundamentals, and learning how to build useful, well-documented projects.</p>
+        </article>
+        <article class="card">
+          <div class="icon">◎</div>
+          <h3>How I learn</h3>
+          <p>Through independent study, reading technical documentation, researching solutions, testing ideas, and improving from feedback.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="sectionhead">
+        <div class="eyebrow">Current toolkit</div>
+        <h2>Skills I’m developing</h2>
+        <p class="sub">Skill descriptions are intentionally honest and reflect a learning-stage portfolio.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">Py</div><h3>Python</h3>
+          <p>Practicing core syntax, simple scripts, basic automation, and debugging.</p>
+          <div class="tags"><span class="tag">Fundamentals</span><span class="tag">Scripts</span><span class="tag">Debugging</span></div>
+        </article>
+        <article class="card">
+          <div class="icon">⌁</div><h3>Cybersecurity</h3>
+          <p>Learning security concepts, safe system practices, networking basics, and how vulnerabilities are understood and prevented.</p>
+          <div class="tags"><span class="tag">Foundations</span><span class="tag">Networking</span><span class="tag">Defensive security</span></div>
+        </article>
+        <article class="card">
+          <div class="icon">⌕</div><h3>Research & learning</h3>
+          <p>Reading documentation, researching technical questions, and using AI tools responsibly to support learning.</p>
+          <div class="tags"><span class="tag">Documentation</span><span class="tag">Self-learning</span><span class="tag">Problem-solving</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sectionhead">
+        <div class="eyebrow">Learning in public</div>
+        <h2>Projects & practice</h2>
+        <p class="sub">This section is ready for real work as it is completed and uploaded.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">01</div><h3>Python utility script</h3>
+          <p><strong>Planned learning project.</strong> A small command-line tool to practice input, conditions, functions, and clear output. Add the repository link after completing and testing it.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Beginner</span><span class="tag">Planned</span></div>
+        </article>
+        <article class="card">
+          <div class="icon">02</div><h3>Security study notes</h3>
+          <p><strong>Planned learning project.</strong> Beginner-friendly notes on passwords, updates, phishing awareness, and safe account practices.</p>
+          <div class="tags"><span class="tag">Cybersecurity</span><span class="tag">Defensive</span><span class="tag">Planned</span></div>
+        </article>
+        <article class="card">
+          <div class="icon">03</div><h3>Networking fundamentals</h3>
+          <p><strong>Planned learning project.</strong> A glossary explaining IP addresses, DNS, HTTP/HTTPS, and basic network concepts in my own words.</p>
+          <div class="tags"><span class="tag">Networking</span><span class="tag">Research</span><span class="tag">Planned</span></div>
+        </article>
+      </div>
+      <div class="notice">Project status matters: these are learning plans, not claims of completed work. Replace each card’s description and status when the project is actually finished and published.</div>
+    </section>
+
+    <section id="contact">
+      <div class="card contact">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h2 style="margin-top:5px">Let’s connect.</h2>
+          <p class="sub">For learning and project-related contact.</p>
+          <p><a class="textlink" href="mailto:eaydsameh75@gmail.com">eaydsameh75@gmail.com</a></p>
+        </div>
+        <a class="btn primary" href="https://github.com/hanyslamt63-lang" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© <span id="year">2026</span> Iyad Hany. Built as a learning portfolio.</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
